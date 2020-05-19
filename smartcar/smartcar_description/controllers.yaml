@@ -1,0 +1,6 @@
+arm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - front_left_wheel_joint
+    - front_right_wheel_joint
+

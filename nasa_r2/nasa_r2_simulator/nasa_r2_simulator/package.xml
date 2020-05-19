@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>nasa_r2_simulator</name>
+  <version>0.5.5</version>
+  <description>Metapackage for simulating Robonaut2</description>
+
+  <maintainer email="davidvlu@gmail.com">David V. Lu!!</maintainer>
+  <maintainer email="stephen.hart@nasa.gov">Stephen Hart</maintainer>
+
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>r2_gazebo</run_depend>
+  <run_depend>gazebo_interface</run_depend>
+  <run_depend>gazebo_gripper</run_depend>
+  <run_depend>gazebo_taskboard</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

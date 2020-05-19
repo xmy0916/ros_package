@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<robot name="mini_cheetah">
+  <link name="trunk">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="3.3" />
+      <inertia ixx="0.011253" ixy="0" ixz="0" iyy="0.036203" iyz="0" izz="0.042673"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://cheetah_description/meshes/mini_body.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://cheetah_description/meshes/mini_body.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="trunk">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+    <!--!!!!!!!!!!!! Front Right Leg !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <joint name="FR_hip_joint" type="continuous">
+        <axis xyz="0 0 1"/>
+        <origin rpy="1.57079632679 0 1.57079632679" xyz="0.19 -0.049 0.0"/>
+        <parent link="trunk"/>
+        <child link="FR_hip"/>
+    </joint>
+    <link name="FR_hip">
+        <inertial>
+            <mass value="0.54"/>
+            <origin xyz="0.0 0.036 0."/>
+            <inertia ixx="0.000381" ixy="0.000058" ixz="0.00000045" 
+                iyy="0.000560" iyz="0.00000095" izz="0.000444"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_abad.dae"/>
+            </geometry>
+            <origin rpy="1.5708 0 0" xyz="10 0 -0.055"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_abad.dae"/>
+            </geometry>
+            <origin rpy="1.5708 0 0" xyz="0 0 -0.055"/>
+        </collision>
+    </link>
+
+  <gazebo reference="FR_hip">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+    <joint name="FR_thigh_joint" type="continuous">
+        <axis xyz="0 0 1"/>
+        <origin rpy="0.0 1.5708 0.0" xyz="-0.062 0 0.00"/>
+        <parent link="FR_hip"/>
+        <child link="FR_thigh"/>
+    </joint>
+    <link name="FR_thigh">
+        <inertial>
+            <mass value="0.634"/>
+            <origin xyz="0.0 0.016 -0.02"/>
+            <inertia ixx="0.001983" ixy="0.000245" ixz="0.000013" 
+                iyy="0.002103" iyz="0.0000015" izz="0.000408"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_upper_link.dae"/>
+            </geometry>
+            <origin rpy="-1.507  0 3.14" xyz="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_upper_link.dae"/>
+            </geometry>
+            <origin rpy="-1.507  0 3.14" xyz="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+
+  <gazebo reference="FR_thigh">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+    <joint name="FR_calf_joint" type="continuous">
+        <axis xyz="0 0 1"/>
+        <origin rpy="0.0 0 0.0" xyz="0.209 0 0 "/>
+        <parent link="FR_thigh"/>
+
+        <child link="FR_calf"/>
+    </joint>
+    <link name="FR_calf">
+        <inertial>
+            <mass value="0.064"/>
+            <origin xyz="0.0 0.0 -0.209"/>
+            <inertia ixx="0.000245" ixy="0" ixz="0.0" iyy="0.000248" iyz="0" izz="0.000006"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_lower_link.dae"/>
+            </geometry>
+            <origin rpy="-1.57070 0 -1.5707" xyz="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://cheetah_description/meshes/mini_lower_link.dae"/>
+            </geometry>
+            <origin rpy="-1.57070 0 -1.5707" xyz="0.0 0.0 0.0"/>
+        </collision>
+    </link>
+
+  <gazebo reference="FR_calf">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+    <link name="FR_foot">
+    <contact>
+      <friction_anchor/>
+      <stiffness value="30000.0"/>
+      <damping value="1000.0"/>
+      <spinning_friction value="0.3"/>
+      <lateral_friction value="3.0"/>
+    </contact>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <material name="darkgray"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.15"/>
+      <inertia ixx="0.000025" ixy="0" ixz="0" iyy="0.000025" iyz="0" izz="0.000025"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="FR_foot">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <joint name="FR_foot_fixed" type="fixed">
+    <parent link="FR_calf"/>
+    <child link="FR_foot"/>
+    <origin xyz="0.18 0 0"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+
+
+</robot>

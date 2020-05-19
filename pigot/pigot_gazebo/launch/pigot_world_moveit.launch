@@ -1,0 +1,81 @@
+<launch>
+
+  <param name="/use_sim_time" value="true" />
+ 
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="world_name" value="$(find pigot_gazebo)/worlds/pigot.world"/>
+  <arg name="paused" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+  
+  <include file="$(find pigot_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <!--The visualization component of MoveIt!-->
+<!--  <include file="$(find pigot_moveit_config)/launch/moveit_rviz.launch"/>-->
+<!--    <arg name="config" value="true"/>-->
+<!--    <arg name="debug" value="false"/>-->
+
+    <!-- We do not have a robot connected, so publish fake joint states -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/> 
+    <rosparam param="/source_list">[/pigot/joint_states]</rosparam>
+  </node>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find pigot_description)/urdf/pigot.xacro"/>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model pigot -param robot_description"/>
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find pigot_control)/config/pigot_control_moveit.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" ns="/pigot"
+    output="screen" args="joint_state_controller
+                          group_arm_controller
+                          group_gripper_controller
+                          joint1_position_controller
+                          joint2_position_controller
+                          joint3_position_controller
+                          joint4_position_controller
+                          joint5_position_controller
+                          joint6_position_controller
+                          joint7_position_controller
+                          joint8_position_controller
+                          joint9_position_controller
+                          joint10_position_controller
+                          joint11_position_controller
+                          joint12_position_controller"/>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+      <remap from="/joint_states" to="/pigot/joint_states" />
+    </node>
+    
+    
+<!--     <node pkg="laser_scan_matcher" type="laser_scan_matcher_node" -->
+<!--        name="laser_scan_matcher_node" output="screen">-->
+
+<!--        <param name="fixed_frame" value="odom"/>-->
+<!--        <param name="base_frame" value="base_link"/>-->
+<!--        <param name="max_iterations" value="10"/>-->
+<!--        <param name="use_imu" value="true"/>-->
+<!--        <param name="kf_dist_angular" value="0.001"/>-->
+<!--        <param name="kf_dist_linear" value="0.001"/>-->
+<!--        <param name="outliers_maxPerc" value="0.9"/>-->
+<!--    </node>-->
+
+</launch>

@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<robot name="taskboard" xmlns:xacro="http://wiki.ros.org/xacro">
+  <link name="world"/>
+  <link name="dummy">
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+  
+  <xacro:mesh_no_collide name="taskboard_lower" mesh="tskbd_lower_assembly_robonaut.dae" mass="5" />
+
+  <xacro:mesh_no_collide name="taskboard_lower_labels" mesh="tskbd_lower_assembly_labels.dae" mass="5" />
+
+  <joint name="world/dummy" type="fixed">
+    <parent link="world"/>
+    <child link="dummy"/>
+    <origin rpy="0.0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <joint name="dummy/taskboard_lower" type="fixed">
+    <parent link="dummy"/>
+    <child link="taskboard_lower"/>
+    <origin rpy="1.57 0 3.14" xyz=".02 -.48 1.3"/>
+  </joint>
+
+  <joint name="dummy/taskboard_lower_labels" type="fixed">
+    <parent link="taskboard_lower"/>
+    <child link="taskboard_lower_labels"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+  </joint>
+
+
+  <xacro:include filename="$(find r2_gazebo)/urdf/taskboard.slot1.xacro" />
+  <xacro:include filename="$(find r2_gazebo)/urdf/taskboard.slot2.xacro" />
+  <xacro:include filename="$(find r2_gazebo)/urdf/taskboard.slot3.xacro" />
+  <xacro:include filename="$(find r2_gazebo)/urdf/taskboard.slot4.xacro" />
+
+
+  <gazebo reference="taskboard_lower">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot3_labels">
+    <material value="Gazebo/Black" />
+  </gazebo>
+<!--
+  <gazebo reference="taskboard_slot4_panel">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot3_panel">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_panel">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_panel">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+-->
+  <gazebo reference="taskboard_slot4_labels">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_labels">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_switch1_cover">
+    <material value="Gazebo/Red" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_guard">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_blackplate">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot1_switch">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_labels1">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_labels2">
+    <material value="Gazebo/Black" />
+  </gazebo>
+<!--
+  <gazebo reference="taskboard_slot2_B06">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B06_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B04">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B04_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+-->
+  <gazebo reference="taskboard_slot2_B04_Cap">
+    <material value="Gazebo/Black" />
+  </gazebo>
+<!--
+  <gazebo reference="taskboard_slot2_B02_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+-->
+  <gazebo reference="taskboard_slot2_B02">
+    <material value="Gazebo/Black" />
+  </gazebo>
+<!--
+  <gazebo reference="taskboard_slot2_B01_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B05_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B03_Base">
+    <material value="Gazebo/Grey" />
+  </gazebo>
+-->
+  <gazebo reference="taskboard_slot2_B03">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="taskboard_slot2_B03_Strip">
+    <material value="Gazebo/White" />
+  </gazebo>
+
+<!--   <gazebo>
+    <controller:gazebo_taskboard name="gazebo_taskboard" plugin="libgazebo_taskboard.so">
+    </controller:gazebo_taskboard>
+  </gazebo> -->
+
+  <gazebo>
+    <plugin name="gazebo_taskboard" filename="libgazebo_taskboard.so"/>
+  </gazebo>
+
+
+</robot>

@@ -1,0 +1,6 @@
+arm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - front_left_caster_joint
+    - front_right_caster_joint
+

@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="robot_voice" type="iat_publish" name="iat_publish"  output="screen">
+  </node>
+  <node pkg="xfei_asr" type="tts_subscribe_speak" name="tts_subscribe_speak"  output="screen">
+  </node>
+  <node pkg="wanderbot" type="voice_contrl.py" name="voice_contrl"  output="screen">
+  </node>
+</launch>

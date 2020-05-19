@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="taskboard_B05">
+  <xacro:property name="b5prefix" value="taskboard_b05_" />
+  <link name="${b5prefix}Link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link1.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link1.dae" scale="0 0 0"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link2_X">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link2_Y">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link2.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link2.dae" scale="0 0 0"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link3_X">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link3_Y">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link3.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link3.dae" scale="0 0 0"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link4_X">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link4_Y">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link5.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link5.dae" scale="0 0 0"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link5_X">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link5_Y">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Link5">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link4.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/cable_link4.dae" scale="0 0 0"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Taskboard_Slot2_B05_X">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Taskboard_Slot2_B05_Y">
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <link name="${b5prefix}Taskboard_Slot2_B05">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/tskbd_panel_assembly_slot2_b05.dae"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </visual> 
+    <collision>
+      <geometry>
+        <mesh filename="package://r2_gazebo/Media/models/taskboard/tskbd_panel_assembly_slot2_b05.dae" scale="1 1 1"/> 
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value=".01"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <joint name="${b5prefix}Taskboard_Slot2/Link1" type="continuous">
+    <parent link="taskboard_slot2"/>
+    <child link="${b5prefix}Link1"/>
+    <origin rpy="0 0 0" xyz="0 -0.1236 0.01746"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link1/Link2_X" type="continuous">
+    <parent link="${b5prefix}Link1"/>
+    <child link="${b5prefix}Link2_X"/>
+    <origin rpy="0 0 0" xyz="0 0 0.066"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link2_X/Link2_Y" type="continuous">
+    <parent link="${b5prefix}Link2_X"/>
+    <child link="${b5prefix}Link2_Y"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link2_Y/Link2" type="continuous">
+    <parent link="${b5prefix}Link2_Y"/>
+    <child link="${b5prefix}Link2"/>
+    <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link2/Link3_X" type="continuous">
+    <parent link="${b5prefix}Link2"/>
+    <child link="${b5prefix}Link3_X"/>
+    <origin rpy="0 0 0" xyz="0 0 0.04033"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link3_X/Link3_Y" type="continuous">
+    <parent link="${b5prefix}Link3_X"/>
+    <child link="${b5prefix}Link3_Y"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link3_Y/Link3" type="continuous">
+    <parent link="${b5prefix}Link3_Y"/>
+    <child link="${b5prefix}Link3"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link3/Link4_X" type="continuous">
+    <parent link="${b5prefix}Link3"/>
+    <child link="${b5prefix}Link4_X"/>
+    <origin rpy="0 0 0" xyz="0 0 0.04733"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link4_X/Link4_Y" type="continuous">
+    <parent link="${b5prefix}Link4_X"/>
+    <child link="${b5prefix}Link4_Y"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link4_Y/Link4" type="continuous">
+    <parent link="${b5prefix}Link4_Y"/>
+    <child link="${b5prefix}Link4"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link4/Link5_X" type="continuous">
+    <parent link="${b5prefix}Link4"/>
+    <child link="${b5prefix}Link5_X"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03811"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link5_X/Link5_Y" type="continuous">
+    <parent link="${b5prefix}Link5_X"/>
+    <child link="${b5prefix}Link5_Y"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link5_Y/Link5" type="continuous">
+    <parent link="${b5prefix}Link5_Y"/>
+    <child link="${b5prefix}Link5"/>
+    <origin rpy="0 0  0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Link5/Taskboard_Slot2_B05_X" type="continuous">
+    <parent link="${b5prefix}Link5"/>
+    <child link="${b5prefix}Taskboard_Slot2_B05_X"/>
+    <origin rpy="0 0 0" xyz="0 0 0.006223"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Taskboard_Slot2_B05_X/Taskboard_Slot2_B05_Y" type="continuous">
+    <parent link="${b5prefix}Taskboard_Slot2_B05_X"/>
+    <child link="${b5prefix}Taskboard_Slot2_B05_Y"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <joint name="${b5prefix}Taskboard_Slot2_B05_Y/Taskboard_Slot2_B05" type="continuous">
+    <parent link="${b5prefix}Taskboard_Slot2_B05_Y"/>
+    <child link="${b5prefix}Taskboard_Slot2_B05"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" velocity="100"/>
+    <dynamics damping=".1" friction=".1" />
+  </joint>
+
+  <gazebo reference="Link1">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="Link2">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="Link3">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="Link4">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="Link5">
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+  <gazebo reference="Taskboard_Slot2_B01">
+    <material value="PR2/Grey3" />
+  </gazebo>
+
+</robot>

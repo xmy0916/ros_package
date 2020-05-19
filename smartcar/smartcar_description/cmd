@@ -1,0 +1,5 @@
+控制方向：
+rostopic pub -r 10 /arm_controller/command trajectory_msgs/JointTrajectory \
+  '{joint_names: ["back_left_caster_joint", "back_right_caster_joint", "front_left_caster_joint", "front_right_caster_joint"], points: [{positions: [0, 0, 0, 0], time_from_start: [1.0,0.0]}]}'
+控制速度：
+rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
